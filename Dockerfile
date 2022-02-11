@@ -6,6 +6,7 @@ RUN mkdir -p /usr/src/geonode
 # Enable postgresql-client-13
 RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main" | tee /etc/apt/sources.list.d/pgdg.list
 RUN echo "deb http://deb.debian.org/debian/ stable main contrib non-free" | tee /etc/apt/sources.list.d/debian.list
+RUN apt-get install -y ca-certificates wget
 RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
 
 # To get GDAL 3.2.1 to fix this issue https://github.com/OSGeo/gdal/issues/1692
